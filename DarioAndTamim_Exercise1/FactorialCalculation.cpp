@@ -3,17 +3,22 @@
 using namespace std;
 
 int main() {
-    // get the number from stdin
     int x;
     cin >> x;
 
-    // output int
-    int result = 1;
+    // for negative numbers handling
+    if (x < 0) {
+        cout << "Error: Factorial not defined for negative numbers" << endl;
+        return 1;
+    }
+    //Q: Why unsigned long long? Ans: because factorials of 13 exceed standard integer limits.
+    unsigned long long result = 1;
 
-    // loop and multiply the output for every number until x
+    // fact calculation:
     for (int i = 1; i <= x; i++) {
         result *= i;
     }
 
-    cout << result;
+    cout << result << endl;
+    return 0;
 }
